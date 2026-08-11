@@ -2,8 +2,8 @@
 
 A full-stack task management application built with React, Node.js, PostgreSQL, and JWT authentication.
 
-## Live Demo
-[Coming soon]
+<!-- ## Live Demo
+[Coming soon] -->
 
 ## Features
 - User registration and login with JWT authentication
