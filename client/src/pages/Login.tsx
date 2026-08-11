@@ -18,7 +18,7 @@ export default function Login() {
     setLoading(true)
     const endpoint = isRegister ? 'register' : 'login'
     try {
-      const res = await fetch(`http://localhost:5000/api/auth/${endpoint}`, {
+      const res = await fetch(`https://task-manager-production-6733.up.railway.app/api/auth/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password })

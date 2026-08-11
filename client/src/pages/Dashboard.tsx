@@ -24,7 +24,7 @@ export default function Dashboard() {
 
   const fetchTasks = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/tasks', {
+      const res = await fetch('https://task-manager-production-6733.up.railway.app/api/tasks', {
         headers: { Authorization: `Bearer ${token}` }
       })
       const data = await res.json()
@@ -38,7 +38,7 @@ export default function Dashboard() {
 
   const addTask = async () => {
     if (!title.trim()) return
-    await fetch('http://localhost:5000/api/tasks', {
+    await fetch('https://task-manager-production-6733.up.railway.app/api/tasks', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       body: JSON.stringify({ title, description, status: 'todo' })
@@ -50,7 +50,7 @@ export default function Dashboard() {
   }
 
   const updateStatus = async (id: number, status: Task['status']) => {
-    await fetch(`http://localhost:5000/api/tasks/${id}`, {
+    await fetch(`https://task-manager-production-6733.up.railway.app/api/tasks/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       body: JSON.stringify({ status })
@@ -59,7 +59,7 @@ export default function Dashboard() {
   }
 
   const deleteTask = async (id: number) => {
-    await fetch(`http://localhost:5000/api/tasks/${id}`, {
+    await fetch(`https://task-manager-production-6733.up.railway.app/api/tasks/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -300,7 +300,7 @@ export default function Dashboard() {
                     return
                   }
                   try {
-                    const res = await fetch('http://localhost:5000/api/auth/update-password', {
+                    const res = await fetch('https://task-manager-production-6733.up.railway.app/api/auth/update-password', {
                       method: 'PUT',
                       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
                       body: JSON.stringify({ password: newPassword })
